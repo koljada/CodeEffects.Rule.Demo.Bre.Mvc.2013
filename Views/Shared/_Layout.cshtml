@@ -1,0 +1,50 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewBag.Title - VS 2013 &amp; MVC 5.2.2</title>
+    @Styles.Render("~/Content/css")
+    @Scripts.Render("~/bundles/modernizr")
+    <link href="@Url.Content("~/Content/Common.css")" rel="stylesheet" type="text/css" />
+    <script type="text/javascript">
+			function getEducationTypes()
+			{
+				var list =
+				[
+					{ "ID": 0, "Name": "Master Degree" },
+					{ "ID": 1, "Name": "College" },
+					{ "ID": 2, "Name": "High School" },
+					{ "ID": 3, "Name": "Other" }
+				];
+				return list;
+			};
+    </script>
+</head>
+<body>
+    <div class="main" style="margin-top:30px;">
+        <div class="left" style="padding-left:20px;">
+            <a href="http://codeeffects.com" class="nodecor"><span class="logo">Code</span>&nbsp;<span class="logo distincted">Effects</span>&nbsp;<span class="logo">Software</span></a>
+        </div>
+        <div class="right" style="padding-right:14px;text-align:right;">
+            @Html.ActionLink("Post Example", "Index", "Post", null, new { @class = "nav" })
+            @Html.ActionLink("Ajax Example", "Index", "Ajax", null, new { @class = "nav" } )
+        </div>
+        <div class="clear"></div>
+    </div>
+    <div class="main">
+        @RenderBody()
+    </div>
+    <div class="main" style="text-align:center;">
+        <a class="tiny" href="http://codeeffects.com">Code Effects Software</a><span class="tiny">&copy; @DateTime.Now.Year</span>
+        <span class="tiny bold">&middot;</span>
+        <a class="tiny" href="/Content/Terms.htm">Terms and Conditions</a>
+        <span class="tiny bold">&middot;</span>
+        <a class="tiny" href="/Content/Eula.htm">EULA</a>
+    </div>
+
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/bootstrap")
+    @RenderSection("scripts", required: false)
+</body>
+</html>

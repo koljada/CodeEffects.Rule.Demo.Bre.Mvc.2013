@@ -1,0 +1,30 @@
+﻿@model CodeEffects.Rule.Demo.Bre.Mvc.Models.Order
+<div>
+	<div class="left" style="width:180px;">
+		<div class="row">
+			<div>Quantity:</div>
+			<div>@Html.TextBoxFor(m => m.Qtty)</div>
+			<div class="clear"></div>
+		</div>
+		<div class="row">
+			<div>Order Items Count:</div>
+			<div>@Html.TextBoxFor(m => m.OrderItemsCount)</div>
+		</div>
+		<div class="row">
+			<div>Date :</div>
+			<div>@Html.TextBoxFor(m => m.ProductDate)</div>
+		</div>
+		<div class="row">
+			<div>Product Group:</div>
+			<div>
+				@Html.DropDownListFor(m => m.ProductGroupId, ViewBag.Groups as List<SelectListItem>)
+			</div>
+		</div>		
+		<div class="row">
+			<div>Price:</div>
+			<div>@Html.TextBoxFor(m => m.Price)</div>
+		</div>
+	</div>	
+	<div style="text-align:right;margin-top:10px;"><input type="submit" id="Button" name="Button" value="Test" class="button" /></div>
+	<div class="clear"></div>
+</div>
